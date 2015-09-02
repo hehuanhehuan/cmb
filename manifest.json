@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "poptop-cmbc",
+  "version": "0.0.1",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://pbnj.ebank.cmbchina.com/CmbBank_PB/UI/PBPC/DebitCard_AccountManager/am_QueryTodayTrans.aspx*"],
+      "js": ["jquery-2.1.1.min.js", "cmbc-record.js"],
+      "all_frames":true
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "control-template.html"
+  ]
+}
